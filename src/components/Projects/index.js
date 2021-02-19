@@ -6,10 +6,7 @@ import styled from 'styled-components'
 const Projects = () => {
   return (
     <div id="projects">
-      <SectionHeader>
-      <h2>Selected Projects</h2>
-
-      </SectionHeader>
+      <HeaderH2>Selected Projects</HeaderH2>
       <ProjectsSection {...ProjectsData}/>
       <ProjectsSection {...ProjectsDataTwo}/>
       <ProjectsSection {...ProjectsDataThree}/>
@@ -20,17 +17,14 @@ const Projects = () => {
 
 export default Projects
 
-const SectionHeader = styled.div`
-  width:100%;
-  height:100%;
-  padding-top:4rem;
-  text-align:center;
 
-  h2{
+const HeaderH2 = styled.h2 `
     position:relative;
     font-size:clamp(1.5rem, 6vw, 4rem);
+    text-align:center;
+    margin:5rem 0;
 
-  :before {
+    &:before {
     content: '';
     position: absolute;
     height: 10px;
@@ -40,7 +34,8 @@ const SectionHeader = styled.div`
     z-index: -1;
   }
 
+  @media screen and (max-width:768px){
+    margin:2rem 0;
   }
 `
-
 

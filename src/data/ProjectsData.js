@@ -22,7 +22,8 @@ export const ProjectsData = {
   buttonLabel:"Visit App",
   image:ashtongagnon,
   reverse:true,
-  tools: [react, webpack, css, github, netlify]
+  tools: [react, webpack, css, github, netlify],
+  link:"https://www.ashtongagnonavocats.com/"
 }
 
 export const ProjectsDataTwo = {
@@ -32,7 +33,8 @@ export const ProjectsDataTwo = {
   buttonLabel:"Visit App",
   image:counterargument,
   reverse:false,
-  tools:[ruby, rails, sass, javascript, github, heroku]
+  tools:[ruby, rails, sass, javascript, github, heroku],
+  link:"http://www.counterargument.ca/"
 }
 
 export const ProjectsDataThree = {
@@ -42,7 +44,8 @@ export const ProjectsDataThree = {
   buttonLabel:"Visit App",
   image:pwoveb,
   reverse:true,
-  tools: [react, webpack, css,github]
+  tools: [react, webpack, css,github],
+  link:'http://pwovebkreyol.netlify.app/'
 }
 
 export const ProjectsDataFour = {
@@ -52,5 +55,6 @@ export const ProjectsDataFour = {
   buttonLabel:"Visit App",
   image:spotitunes,
   reverse:false,
-  tools: [react, webpack, css,surge]
+  tools: [react, webpack, css,surge],
+  link:"http://spotitunes.surge.sh/"
 }

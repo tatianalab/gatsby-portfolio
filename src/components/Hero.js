@@ -42,7 +42,9 @@ const Hero = () => {
           animate='visible'
           transition={{duration:3}}
           >I enjoy building things for the web with React</HeroP>
-          <Button whileTap={{scale:0.9}} primary="true" big="true" round="true">Get in touch!</Button>
+          <Button to='/contact' primary="true" big="true" round="false">
+          Get in touch!
+          </Button>
         </HeroItems>
       </ColumnOne>
       <ColumnTwo>

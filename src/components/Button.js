@@ -14,6 +14,7 @@ export const Button = styled(Link)`
   transition:0.3s !important;
   border-radius: ${({round}) => (round ? '50px' : 'none')};
   box-shadow: 2px 5px 20px #164553;
+  cursor:pointer;
 
   &:hover{
     background: ${({primary}) => (primary ? '#448A91' : '#f26a2e')};

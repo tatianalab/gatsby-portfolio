@@ -5,17 +5,18 @@ import {Button} from '../Button'
 const Section = styled.div`
   width:100%;
   height:100%;
-  padding:4rem 0rem;
+  // padding:2rem 0rem;
 `;
 
 const Container = styled.div`
-  padding:3rem calc((100vw - 1300px) / 2);
+  padding:2rem calc((100vw - 1300px) / 2);
   display:grid;
   grid-template-columns:1fr 1fr;
-  grid-template-rows:80vh;
+  grid-template-rows:800px;
 
   @media screen and (max-width:768px){
     grid-template-columns:1fr;
+    grid-template-rows:auto;
   }
 `;
 
@@ -38,6 +39,7 @@ const ColumnLeft = styled.div`
   }
   @media screen and (max-width:768px){
     order:${({reverse}) => (reverse ? '2' :'1')};
+    justify-content:flex-start;
   }
 `
 const ColumnRight = styled.div`
@@ -60,8 +62,8 @@ const ColumnRight = styled.div`
     display:block;
 
     @media screen and (max-width:768px){
-      width:50%;
-      height:auto;
+      width:auto;
+      max-height:400px;
     }
   }
 `
@@ -77,10 +79,13 @@ const ToolIcon = styled.img`
   margin-right:5px;
 `
 
-const ProjectsSection = ({tools,heading, paragraphTwo,paragraphOne, buttonLabel, reverse, image}) => {
+
+
+const ProjectsSection = ({link,tools,heading, paragraphTwo,paragraphOne, buttonLabel, reverse, image}) => {
   return (
     <Section>
       <Container>
+
       <ColumnLeft>
         <h1>{heading}</h1>
         <Tools>
@@ -92,14 +97,13 @@ const ProjectsSection = ({tools,heading, paragraphTwo,paragraphOne, buttonLabel,
         </Tools>
         <p>{paragraphOne}</p>
         <p>{paragraphTwo}</p>
-
-
-
-        <Button to="/" primary="true" round="true">{buttonLabel}</Button>
+        <Button to={link} target="_blank" primary="true" round="true">{buttonLabel}</Button>
       </ColumnLeft>
+
       <ColumnRight reverse={reverse}>
       <img src={image} alt="" />
       </ColumnRight>
+
       </Container>
     </Section>
   )
