@@ -20,6 +20,27 @@ const Hero = () => {
       </HeroBg>
       <HeroContent>
       <ColumnOne>
+        <Image src={shape2} whileTap={{scale:0.9}}
+        drag={true}
+        dragConstraints={{ left:0, right:20, top:0, bottom:50 }}
+        initial={{opacity:0, y:-100}}
+        animate={{opacity:0.5, y:0, transition:{duration:1} }}/>
+        <Image src={shape3} whileTap={{scale:0.9}}
+        drag={true}
+        dragConstraints={{ left:0, right:20, top:0, bottom:50 }}
+        initial={{opacity:0, x:200}}
+        animate={{opacity:0.5, x:0, transition:{duration:2} }} />
+        <Image src={shape3} whileTap={{scale:0.9}}
+        drag={true}
+        dragConstraints={{ left:0, right:20, top:0, bottom:50 }}
+        initial={{opacity:0, y:-100}}
+        animate={{opacity:0.5, y:0, transition:{duration:1} }} />
+
+        <Image src={shape2} whileTap={{scale:0.9}}
+        drag={true}
+        dragConstraints={{ left:0, right:20, top:0, bottom:50 }}
+        initial={{opacity:0, y:-500}}
+        animate={{opacity:0.5, y:0, transition:{duration:3} }} />
         <HeroItems>
           <HeroH1
           variants={fadeLeft}
@@ -45,33 +66,10 @@ const Hero = () => {
           <Button to='/contact' primary="true" big="true" round="false">
           Get in touch!
           </Button>
+
         </HeroItems>
       </ColumnOne>
-      <ColumnTwo>
-        <Image src={shape2} whileTap={{scale:0.9}}
-        drag={true}
-        dragConstraints={{ left:0, right:20, top:0, bottom:50 }}
-        initial={{opacity:0, y:-100}}
-        animate={{opacity:0.5, y:0, transition:{duration:1} }}/>
 
-        <Image src={shape3} whileTap={{scale:0.9}}
-        drag={true}
-        dragConstraints={{ left:0, right:20, top:0, bottom:50 }}
-        initial={{opacity:0, x:200}}
-        animate={{opacity:0.5, x:0, transition:{duration:2} }} />
-
-        <Image src={shape3} whileTap={{scale:0.9}}
-        drag={true}
-        dragConstraints={{ left:0, right:20, top:0, bottom:50 }}
-        initial={{opacity:0, y:-100}}
-        animate={{opacity:0.5, y:0, transition:{duration:1} }} />
-
-        <Image src={shape2} whileTap={{scale:0.9}}
-        drag={true}
-        dragConstraints={{ left:0, right:20, top:0, bottom:50 }}
-        initial={{opacity:0, y:-500}}
-        animate={{opacity:0.5, y:0, transition:{duration:3} }} />
-      </ColumnTwo>
       </HeroContent>
     </HeroContainer>
   )
@@ -90,14 +88,11 @@ const Image = styled(motion.img) `
   opacity:0.5;
 `
 const ColumnOne = styled.div`
-  z-index:10;
-`
-const ColumnTwo = styled.div`
-display:flex;
-justify-content:center;
-align-items:center;
-padding:2rem;
-position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:2rem;
+  position:relative;
 
 ${Image}:nth-child(1){
   top:30px;
@@ -115,8 +110,8 @@ ${Image}:nth-child(4){
   bottom:100px;
   right:140px;
 }
-
 `
+
 
 const HeroContainer = styled.div`
   background:#0c0c0c;
@@ -169,17 +164,18 @@ object-fit:cover;
 
 const HeroContent = styled.div`
   display:grid;
-  grid-template-columns:2fr 1fr;
+  grid-template-columns: 1fr;
   z-index:3;
   height:calc(100vh - 80px);
   max-height:100%;
   padding: 0rem calc((100vw - 1300px) /2);
 
   @media screen and (max-width:768px){
-    display:flex;
+    grid-template-columns:1fr;
   }
 `
 const HeroItems = styled.div`
+  z-index:10;
   display:flex;
   flex-direction:column;
   justify-content:center;

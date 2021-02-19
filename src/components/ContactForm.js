@@ -107,6 +107,13 @@ const FormContainer = styled.div `
   justify-content:center;
   align-items:center;
   background:rgba(244,244,244,0.2);
+
+  @media screen and (max-width:786px){
+    width: 75vw;
+  }
+  @media screen and (max-width:480px){
+    width: 90vw;
+  }
 `
 
 const Form = styled.form `
