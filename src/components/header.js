@@ -3,7 +3,7 @@ import React from "react"
 import styled from 'styled-components'
 import {FaBox} from 'react-icons/fa'
 import {menuData} from '../data/MenuData'
-import resume from '../../public/files/Labrousse_Tatiana_CVfr.pdf'
+import resume from '../../public/files/labroussetatiana-cv-fr.pdf'
 
 
 

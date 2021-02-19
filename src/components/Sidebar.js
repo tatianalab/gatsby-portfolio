@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import {Link } from 'gatsby';
 import {FaBoxOpen} from 'react-icons/fa'
 import {menuData} from '../data/MenuData'
-import resume from '../../public/files/Labrousse_Tatiana_CVfr.pdf'
+import resume from '../../public/files/labroussetatiana-cv-fr.pdf'
 
 const Sidebar = ({isOpen, toggle}) => {
 
