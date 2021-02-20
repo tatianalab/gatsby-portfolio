@@ -27,18 +27,18 @@ const Hero = () => {
         animate={{opacity:0.5, y:0, transition:{duration:1} }}/>
         <Image src={shape3} whileTap={{scale:0.9}}
         drag={true}
-        dragConstraints={{ left:0, right:20, top:0, bottom:50 }}
+        dragConstraints={{ left:0, right:5, top:0, bottom:5 }}
         initial={{opacity:0, x:200}}
         animate={{opacity:0.5, x:0, transition:{duration:2} }} />
         <Image src={shape3} whileTap={{scale:0.9}}
         drag={true}
-        dragConstraints={{ left:0, right:20, top:0, bottom:50 }}
+        dragConstraints={{ left:0, right:20, top:100, bottom:100 }}
         initial={{opacity:0, y:-100}}
         animate={{opacity:0.5, y:0, transition:{duration:1} }} />
 
         <Image src={shape2} whileTap={{scale:0.9}}
         drag={true}
-        dragConstraints={{ left:0, right:20, top:0, bottom:50 }}
+        dragConstraints={{ left:0, right:20, top:50, bottom:70 }}
         initial={{opacity:0, y:-500}}
         animate={{opacity:0.5, y:0, transition:{duration:3} }} />
         <HeroItems>
@@ -175,7 +175,7 @@ const HeroContent = styled.div`
   }
 `
 const HeroItems = styled.div`
-  z-index:10;
+  // z-index:3;
   display:flex;
   flex-direction:column;
   justify-content:center;
