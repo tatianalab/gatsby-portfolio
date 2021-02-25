@@ -50,9 +50,9 @@ const AccordionSection =styled.div`
   flex-direction:column:
   align-items:center;
   justifiy-content:center;
-  height:auto;
-  width:80%;
-  margin:0 auto;
+
+
+
 `
 
 const Container = styled.div`

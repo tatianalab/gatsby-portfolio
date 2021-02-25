@@ -1,186 +1,139 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react'
 import styled from 'styled-components'
+import Video from '../assets/videos/bg-video.mp4'
 import Layout from "../components/layout"
-import SEO from "../components/seo"
-import {graphql, useStaticQuery} from 'gatsby'
-import BackgroundImage from 'gatsby-background-image'
-import Img from 'gatsby-image'
 import tatiana from '../images/tatianalabrousse.png'
-import {GiArrowDunk} from 'react-icons/gi'
 import Accordion from '../components/Accordion'
 import {motion} from 'framer-motion'
-import shape1 from '../images/shape1.svg'
-import shape2 from '../images/shape2.svg'
-import shape3 from '../images/shape3.svg'
+import Img from 'gatsby-image'
+import {GiArrowDunk} from 'react-icons/gi'
+
+
 
 const About = () => {
-  const data = useStaticQuery(graphql`
-    query{
-       file(relativePath:{eq:"aboutbg.jpg"}){
-        childImageSharp{
-          fluid{
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-    `)
-  const fadeLeft = {
+   const fadeLeft = {
     hidden: { opacity:0, x: -100},
     visible: { opacity:1, x:0 }
   }
-
-  return(
+  return (
     <Layout>
-      <SEO title="about" />
-        <AboutBackgroundImage Tag="hero"
-        fluid={data.file.childImageSharp.fluid}>
-          <AboutContainer>
-            <ColLeft>
+      <AboutContainer>
+          <VideoBg src={Video} type='video/mp4' autoPlay loop muted playsInline />
+          <AboutContent>
 
+          <Col1>
             <ImageContainer>
-            <IndicationP
-            variants={fadeLeft}
-            initial='hidden'
-            animate='visible'
-            transition={{duration:2}}
-            >
-            That's Me <Icon/></IndicationP>
-            <Portrait src={tatiana} alt="tatianalabrousse-portrait"
-              initial={{ opacity: 0}}
-              animate={{ opacity:1}}
-              transition={{ duration:2}}
-              whileHover={{ scale: 1.5, rotate: 25, duration:1 }}
-
-            />
-
+              <IndicationP
+                  variants={fadeLeft}
+                  initial='hidden'
+                  animate='visible'
+                  transition={{duration:2}}
+                  >
+                  This is Me <Icon/>
+                </IndicationP>
+              <Portrait src={tatiana} alt="tatianalabrousse-portrait"
+                initial={{ opacity: 0}}
+                animate={{ opacity:0.8}}
+                transition={{ duration:2}}
+                whileHover={{ scale: 1.5, rotate: 25, duration:1 }}
+              />
             </ImageContainer>
 
+          </Col1>
 
-            </ColLeft>
-            <ColRight>
-
+          <Col2>
             <Accordion />
-            </ColRight>
-          </AboutContainer>
-        </AboutBackgroundImage>
-    </Layout>
+          </Col2>
 
-    )
+          </AboutContent>
+      </AboutContainer>
+    </Layout>
+  )
 }
 
 export default About
 
-const Shapes = styled.div `
-
+const AboutContainer = styled.div`
+  background:#0A3A52;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#fff;
+  width:100vw;
+  min-height:100vh;
+  margin-top:-80px;
+  position:relative;
 `
 
-const AboutContainer = styled.div `
-  // margin-top:120px;
-  padding:3rem calc((100vw - 1300px) / 2);
+const VideoBg = styled.video`
+position:absolute;
+width:100%;
+height:100%;
+-o-object-fit:cover;
+object-fit:cover;
+z-index:1;
+`
+
+const AboutContent = styled.div`
+  padding:0 2rem;
+  width:100%;
   display:grid;
   grid-template-columns:1fr 1fr;
-  grid-template-rows:80vh;
+  grid-gap:40px;
   color:white;
+  z-index:2;
 
   @media screen and (max-width:768px){
     grid-template-columns:1fr;
+    margin-top:100px;
+  }
+  @media screen and (max-width:400px){
+    grid-template-columns:1fr;
+    margin-top:240px;
+    margin-bottom:100px;
   }
 `
-const AboutBackgroundImage = styled(BackgroundImage)`
-  opacity: 1 !important;
-  background-size: cover;
-  background-position:center;
-  background-repeat:no-repeat;
-  width:100%;
-  min-height:100vh;
-  margin-top:-80px;
+const Col1 = styled.div`
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
 `
-
-const ColLeft = styled.div `
+const Col2 = styled.div`
   display:flex;
-  flex-direction:column;
   justify-content:center;
-  align-items:center;
-  line-height:1.4;
-  padding:1rem 2rem;
-
-  h1{
-    margin-bottom:1rem;
-    font-size: clamp(1.5rem, 6vw, 2rem);
-  }
-
-  p{
-    margin-bottom:2rem;
-  }
-`;
-
-const ColRight = styled.div `
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:flex-start;
-  line-height:1.4;
-  padding:1rem 2rem;
-
-  h1{
-    margin-bottom:1rem;
-    font-size: clamp(1.5rem, 6vw, 2rem);
-  }
-
-  p{
-    margin-bottom:2rem;
-  }
 `
-
 const ImageContainer = styled.div `
-  width:60%;
-  position:relative;
-  background:transparent;
-  box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.9);
-
-`
-
-const Portrait = styled(motion.img) `
+  display:flex;
+  justify-content:center;
   width:100%;
+  background:transparent;
+  position:relative;
+`
+const Portrait = styled(motion.img) `
+  width:60%;
   height:auto;
-  opacity:0.7;
   border-radius:50%;
   box-shadow: 2px 5px 20px #164553;
 
+  @media screen and (max-width:768px){
+    width:60%;
+  }
 `
 const IndicationP = styled(motion.p) `
   position:absolute;
   color:#f26a2e;
   top:-20px;
-  left:-60px;
+  left:60px;
   z-index:3;
   font-size:2rem;
   transform: rotate3d(1, 2.0, 3.0, 15deg);
+
+  @media screen and (max-width:480px){
+    font-size:1rem;
+  }
 `
 const Icon = styled(GiArrowDunk)`
   color:white;
 `
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
